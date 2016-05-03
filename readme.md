@@ -1,5 +1,16 @@
 ## webpack 1x starter
 
+##### how to
+
+node 4.4.3 lts
+npm 2.15.1
+
+	npm i -g webpack webpack-dev-server
+
+    git clone https://github.com/crapthings/webpack-testfield
+
+    npm install
+
 ### ref
 
 https://github.com/babel/babel-loader
@@ -34,3 +45,9 @@ https://github.com/webpack/imports-loader
 
 inline css injection bootstrap loader 非常不爽，会导致glitch
 探索更好的管理一些第三方像bootstrap这样的前端库
+
+### faq
+
+http://stackoverflow.com/questions/28969861/managing-jquery-plugin-dependency-in-webpack
+
+https://github.com/deedubs/webpack-example-stylus
