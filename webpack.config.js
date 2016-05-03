@@ -36,7 +36,10 @@ var jsonLoader = {
 
 module.exports = {
 
-	entry: ['babel-polyfill', './index.js'],
+	entry: {
+		vendor: ['jquery'],
+		app: ['babel-polyfill', './index.js']
+	},
 
 	output: {
 		path: path.join(__dirname, '/bundle/webpack' + webpackMajorVersion),
@@ -69,11 +72,16 @@ module.exports = {
 
 		new extractTextPlugin('bundle.css'),
 
-		new webpack.ProvidePlugin({
-			_: 'lodash',
-			moment: 'moment',
-			$: 'jquery',
-			jQuery: 'jquery'
+		// new webpack.ProvidePlugin({
+		// 	_: 'lodash',
+		// 	moment: 'moment',
+		// 	$: 'jquery',
+		// 	jQuery: 'jquery'
+		// }),
+
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor',
+			filename: 'jquery.js'
 		})
 
 	],
