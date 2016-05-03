@@ -25,8 +25,18 @@ var babelLoader = {
 }
 
 var cssLoader = {
-	test: /\.(css|styl)$/,
+	test: /\.(css)$/,
+	loader: 'style!css!postcss'
+}
+
+var stylusLoader = {
+	test: /\.(styl)$/,
 	loader: 'style!css!postcss!stylus'
+}
+
+var fileLoader = {
+	test: /\.(png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+	loader: 'file-loader'
 }
 
 var jsonLoader = {
@@ -48,13 +58,21 @@ module.exports = {
 		extensions: ['', '.js', '.css', '.styl'],
 		root: [
 			path.resolve(__dirname)
-		]
+		],
+		alias: {
+			'eventEmitter/EventEmitter': 'wolfy87-eventemitter/EventEmitter',
+			'get-style-property': 'desandro-get-style-property',
+			'matches-selector': 'desandro-matches-selector',
+			'classie': 'desandro-classie'
+		}
 	},
 
 	module: {
 		loaders: [
 			babelLoader,
 			cssLoader,
+			stylusLoader,
+			fileLoader,
 			jsonLoader
 		]
 	},
@@ -73,7 +91,8 @@ module.exports = {
 			_: 'lodash',
 			moment: 'moment',
 			$: 'jquery',
-			jQuery: 'jquery'
+			jQuery: 'jquery',
+			'window.jQuery': 'jquery'
 		})
 
 	],
@@ -83,7 +102,7 @@ module.exports = {
 		import: ['~nib/lib/nib/index.styl']
 	},
 
-	postcss: function () {
+	postcss: function() {
 		return [autoprefixer, postcssShort]
 	}
 

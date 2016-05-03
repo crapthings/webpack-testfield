@@ -51,3 +51,7 @@ inline css injection bootstrap loader 非常不爽，会导致glitch
 http://stackoverflow.com/questions/28969861/managing-jquery-plugin-dependency-in-webpack
 
 https://github.com/deedubs/webpack-example-stylus
+
+http://stackoverflow.com/questions/30329337/how-to-bundle-vendor-scripts-separately-and-require-them-as-needed-with-webpack
+
+https://www.npmjs.com/package/webpack-vendor-chunk-plugin
