@@ -66,7 +66,7 @@ module.exports = {
 
 		new htmlWebpackPlugin({
 			template: 'index.html',
-			inject: true,
+			inject: 'body',
 			hash: true
 		}),
 
