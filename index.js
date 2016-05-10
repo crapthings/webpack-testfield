@@ -11,13 +11,17 @@ angular.module('app', [
 	$stateProvider
 		.state('home', {
 			url: '/',
-			views: {
-				viewa: {
-					template: template,
-					controller,
-					controllerAs: 'vm'
-				},
-			}
+			// views: {
+			// 	viewa: {
+			// 		template: template,
+			// 		controller,
+			// 		controllerAs: 'vm'
+			// 	},
+			// }
+
+			template,
+			controller,
+			controllerAs: 'vm'
 		})
 
 	$locationProvider.html5Mode(true).hashPrefix('!')
@@ -35,8 +39,11 @@ function template() {
 class controller {
 	constructor($state) {
 		this.wow = function() {
-			console.log($state.current.views.viewa.template = '<a>go</a>')
-			console.log($state.current.views.viewa.template)
+			// console.log($state.current.views.viewa.template = '<a>go</a>')
+			// console.log($state.current.views.viewa.template)
+
+			// console.log($state.current.views.viewa.template = '<a>go</a>')
+			console.log($state.current.template = `<p>111222</p>`)
 			$state.reload()
 		}
 	}
