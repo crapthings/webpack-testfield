@@ -18,9 +18,6 @@ var postcssShort = require('postcss-short')
 var babelLoader = {
 	test: /\.(js)$/,
 	loader: 'babel',
-	query: {
-		presets: ['es2015', 'stage-3']
-	},
 	exclude: /node_modules/
 }
 
@@ -73,7 +70,9 @@ module.exports = {
 			_: 'lodash',
 			moment: 'moment',
 			$: 'jquery',
-			jQuery: 'jquery'
+			jQuery: 'jquery',
+			Preact: 'preact',
+			Router: 'preact-router'
 		})
 
 	],
