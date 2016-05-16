@@ -19,7 +19,7 @@ var babelLoader = {
 	test: /\.(js)$/,
 	loader: 'babel',
 	query: {
-		presets: ['es2015', 'stage-3']
+		presets: ['es2015', 'stage-3', 'react']
 	},
 	exclude: /node_modules/
 }
@@ -36,7 +36,7 @@ var jsonLoader = {
 
 module.exports = {
 
-	entry: ['babel-polyfill', './index.js'],
+	entry: ['babel-polyfill', './loader.js'],
 
 	output: {
 		path: path.join(__dirname, '/bundle/webpack' + webpackMajorVersion),
@@ -73,7 +73,9 @@ module.exports = {
 			_: 'lodash',
 			moment: 'moment',
 			$: 'jquery',
-			jQuery: 'jquery'
+			jQuery: 'jquery',
+			React: 'react',
+			ReactDOM: 'react-dom'
 		})
 
 	],

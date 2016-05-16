@@ -1,2 +1,3 @@
-import './test.styl'
-import './test.css'
+import Components from './components'
+
+render(<Components.Layout />, document.getElementById('app'))
