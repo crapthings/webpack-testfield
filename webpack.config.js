@@ -72,12 +72,13 @@ module.exports = {
 
 		new extractTextPlugin('bundle.css'),
 
-		// new webpack.ProvidePlugin({
-		// 	_: 'lodash',
-		// 	moment: 'moment',
-		// 	$: 'jquery',
-		// 	jQuery: 'jquery'
-		// }),
+		new webpack.ProvidePlugin({
+			_: 'lodash',
+			moment: 'moment',
+			$: 'jquery',
+			jQuery: 'jquery',
+			Redux: 'redux'
+		}),
 
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
