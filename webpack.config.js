@@ -19,7 +19,7 @@ var babelLoader = {
 	test: /\.(js)$/,
 	loader: 'babel',
 	query: {
-		presets: ['es2015', 'stage-3', 'react']
+		presets: ['es2015', 'stage-0', 'react']
 	},
 	exclude: /node_modules/
 }

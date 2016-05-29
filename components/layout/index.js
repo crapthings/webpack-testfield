@@ -1,9 +1,25 @@
+import { Link } from 'react-router'
+
 class Header extends Component {
   render () {
     return (
-      <header>
-        <h1>header</h1>
-      </header>
+      <ul>
+        <li>
+          <Link to='/'>home</Link>
+        </li>
+
+        <li>
+          <Link to='/about'>about</Link>
+        </li>
+
+        <li>
+          <Link to='/users'>users</Link>
+        </li>
+
+        <li>
+          <Link to='/test'>test</Link>
+        </li>
+      </ul>
     )
   }
 }
@@ -12,7 +28,7 @@ class Main extends Component {
   render () {
     return (
       <main>
-        <h1>main</h1>
+        {this.props.children}
       </main>
     )
   }
@@ -33,7 +49,7 @@ class Layout extends Component {
     return (
       <div>
         <Header/>
-        <Main/>
+        <Main children={this.props.children} />
         <Footer/>
       </div>
     )
